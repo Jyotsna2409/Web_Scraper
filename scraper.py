@@ -16,13 +16,11 @@ def scrape_data(url):
 
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Try to find tables first
         tables = soup.find_all('table')
         if tables:
             df = pd.read_html(str(tables[0]))[0]
             return df, "Table data scraped successfully!"
 
-        # Try to find list or paragraph items
         elements = soup.find_all(['li', 'p', 'div'])
         data = [clean_text(elem.get_text()) for elem in elements if clean_text(elem.get_text())]
 
