@@ -22,9 +22,6 @@ A simple Streamlit app that scrapes any webpage for table or structured text dat
 
 ---
 
-
----
-
 ## ⚙️ Installation & Usage
 
 1. Clone the repository:  
